@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Road Trip of Us | અમારી સફર ❤️</title>
+
+  <!-- Google Fonts: Sacramento, Caveat, Noto Sans Gujarati, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            twilight: {
+              950: '#080c18',
+              900: '#0f172a',
+              850: '#151336',
+              800: '#1e1b4b',
+              purple: '#2e1065',
+              rosegold: '#fb7185',
+              blush: '#fda4af',
+              gold: '#f59e0b',
+              streetlamp: '#fbbf24'
+            }
+          },
+          fontFamily: {
+            gujarati: ['"Noto Sans Gujarati"', 'sans-serif'],
+            script: ['"Sacramento"', 'cursive'],
+            handwritten: ['"Caveat"', 'cursive'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Twilight Midnight Highway Gradient */
+    body {
+      background: radial-gradient(ellipse at 50% 0%, #20133b 0%, #0f172a 45%, #080c18 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Ambient Twinkling Stars */
+    @keyframes starPulse {
+      0%, 100% { opacity: 0.2; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+    .twinkling-star {
+      position: absolute;
+      border-radius: 9999px;
+      background: #ffffff;
+      animation: starPulse 3.5s ease-in-out infinite;
+    }
+
+    /* Floating Bokeh Particles */
+    @keyframes bokehMotion {
+      0% { transform: translateY(0) translateX(0); opacity: 0.25; }
+      50% { transform: translateY(-40px) translateX(25px); opacity: 0.65; }
+      100% { transform: translateY(0) translateX(0); opacity: 0.25; }
+    }
+    .bokeh-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(28px);
+      pointer-events: none;
+      animation: bokehMotion 9s ease-in-out infinite;
+    }
+
+    /* Highway Center Dashed Line Animation */
+    @keyframes dashTravel {
+      to { stroke-dashoffset: -56; }
+    }
+    .road-travel-line {
+      animation: dashTravel 1.2s linear infinite;
+    }
+
+    /* Checkpoint Pin Pulse */
+    @keyframes pinBounce {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); filter: drop-shadow(0 0 10px rgba(251, 113, 133, 0.4)); }
+      50% { transform: translate(-50%, -60%) scale(1.12); filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.8)); }
+    }
+    .road-pin-anim {
+      animation: pinBounce 2.5s ease-in-out infinite;
+    }
+
+    /* Smartphone Mockup Frame Styling (Anti-Crop 9:16) */
+    .phone-mockup-frame {
+      border: 10px solid #1e293b;
+      border-radius: 40px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 2px rgba(251, 113, 133, 0.3), inset 0 0 20px rgba(0,0,0,0.8);
+      position: relative;
+      background: #090d16;
+      overflow: hidden;
+    }
+    .phone-screen-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: radial-gradient(circle, #1a102f 0%, #080c14 100%);
+    }
+
+    /* Video Theater Cinema Reel Bezel */
+    .cinema-video-frame {
+      border: 8px solid #1e1b4b;
+      border-radius: 28px;
+      background: #050811;
+      box-shadow: 0 25px 60px -10px rgba(0,0,0,0.95), 0 0 35px rgba(244,63,94,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Polaroid Paper Texture & Masking Tape */
+    .polaroid-frame {
+      background: #ffffff;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+    .masking-tape-strip {
+      background: rgba(254, 240, 138, 0.8);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    }
+
+    /* Candle Flame Animation */
+    @keyframes candleWiggle {
+      0%, 100% { transform: translate(-50%, -20%) scale(1); opacity: 0.95; }
+      25% { transform: translate(-48%, -24%) scale(1.1, 0.92) rotate(-3deg); }
+      75% { transform: translate(-52%, -16%) scale(0.92, 1.1) rotate(3deg); }
+    }
+    .flame-glowing {
+      animation: candleWiggle 0.85s infinite ease-in-out;
+      box-shadow: 0 0 20px #f59e0b, 0 0 40px #ea580c;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080c18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fb7185;
+    }
+  </style>
+</head>
+
+<body class="relative flex flex-col justify-between selection:bg-rose-500 selection:text-white">
+
+  <!-- BACKGROUND ELEMENTS -->
+  <div id="stars-sky" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+  <div class="bokeh-orb w-80 h-80 bg-purple-900/25 top-12 left-8"></div>
+  <div class="bokeh-orb w-96 h-96 bg-rose-600/15 top-1/3 right-4"></div>
+  <div class="bokeh-orb w-80 h-80 bg-amber-500/15 bottom-24 left-1/4"></div>
+
+  <!-- FIXED TOP NAVIGATION BAR -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#080c18]/85 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 via-purple-600 to-amber-500 flex items-center justify-center shadow-lg shadow-rose-950/50">
+        <i data-lucide="compass" class="w-5 h-5 text-white animate-spin" style="animation-duration: 20s;"></i>
+      </div>
+      <div>
+        <h1 class="font-sans font-bold text-sm sm:text-base tracking-wide flex items-center gap-1.5 text-white">
+          <span>The Road Trip of Us</span>
+          <span class="text-rose-400">❤️</span>
+        </h1>
+        <p class="font-gujarati text-[11px] text-amber-200/90 font-medium">અમારી પ્રેમ સફર • ૩૧ મીઠા પડાવો (વિડીયો & ફોટો)</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2.5">
+      <!-- Ambient Audio Synthesizer Toggle -->
+      <button id="audio-toggle-btn" onclick="toggleLoFiSoundtrack()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 border border-white/20 text-amber-200 transition-all shadow-md">
+        <i data-lucide="music" class="w-3.5 h-3.5" id="audio-btn-icon"></i>
+        <span id="audio-btn-label">સંગીત શરુ કરો</span>
+      </button>
+
+      <!-- Quick Stops Mini-Map Drawer Toggle -->
+      <button onclick="toggleStopsDrawer()" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-rose-600/80 hover:bg-rose-500 text-white transition-all shadow-md">
+        <i data-lucide="map" class="w-3.5 h-3.5"></i>
+        <span>૩૧ યાદો</span>
+      </button>
+
+      <!-- Photo & Video Editor Modal Toggle -->
+      <button onclick="openEditorModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-all" title="Add / Edit Photos and Videos">
+        <i data-lucide="edit-3" class="w-3.5 h-3.5 text-amber-300"></i>
+        <span>એડિટ કરો</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero-banner" class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 pb-12">
+    <div class="max-w-3xl mx-auto space-y-6">
+      
+      <!-- Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs sm:text-sm font-medium tracking-widest uppercase shadow-lg">
+        <i data-lucide="sparkles" class="w-4 h-4 text-amber-300 animate-pulse"></i>
+        <span class="font-gujarati">એક અવિસ્મરણીય જન્મદિવસ સરપ્રાઈઝ</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+        The Road Trip <br>
+        <span class="font-script text-5xl sm:text-7xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-300 to-amber-300 font-normal">
+          of Us
+        </span>
+      </h1>
+
+      <!-- Gujarati Heartfelt Romantic Subtitle -->
+      <p class="font-gujarati text-lg sm:text-2xl text-slate-200 max-w-2xl mx-auto leading-relaxed drop-shadow font-medium">
+        "પહેલી નજરથી શરૂ કરીને મોડી રાતના વિડીયો કોલ્સ અને આપણી વિડીયો ક્લિપ્સ સુધી... આપણી સફરનો દરેક વળાંક માત્ર તારા સ્મિતથી જ સુંદર બન્યો છે."
+      </p>
+
+      <p class="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto">
+        An interactive journey featuring 30+ memories: live playable video clips, vertical FaceTime screenshots, road trip pitstops, and your grand birthday cake destination.
+      </p>
+
+      <!-- Start Journey Button -->
+      <div class="pt-6">
+        <button id="start-journey-btn" onclick="startTheRoadTrip()" class="group relative inline-flex items-center gap-3.5 px-9 py-4 rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-bold text-base sm:text-lg shadow-[0_0_40px_rgba(244,63,94,0.6)] hover:shadow-[0_0_60px_rgba(251,191,36,0.8)] transition-all transform hover:-translate-y-1 active:scale-95">
+          <span class="font-sans font-semibold tracking-wide">Start the Journey</span>
+          <i data-lucide="car" class="w-5 h-5 group-hover:translate-x-1.5 transition-transform text-amber-200"></i>
+        </button>
+      </div>
+
+      <!-- Downward Scroll Indicator -->
+      <div class="pt-10 flex flex-col items-center justify-center opacity-65 animate-bounce">
+        <span class="text-[11px] font-mono uppercase tracking-widest text-slate-400">Drive Down The Highway</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-400"></i>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HIGHWAY ROAD CONTAINER SECTION -->
+  <main id="highway-main" class="relative z-10 w-full max-w-6xl mx-auto px-3 sm:px-6 py-6 flex flex-col items-center">
+    
+    <!-- Sticky Road Trip HUD & Progress Bar -->
+    <div class="sticky top-16 z-30 w-full max-w-4xl bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4 mb-8 shadow-2xl backdrop-blur-md flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-black/80 px-3.5 py-1.5 rounded-xl border border-slate-800 font-mono text-amber-400 font-bold text-xs sm:text-sm flex items-center gap-2">
+          <i data-lucide="milestone" class="w-4 h-4 text-amber-500"></i>
+          <span>STOP <span id="hud-stop-num">01</span> / <span id="hud-total-num">31</span></span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[10px] text-slate-400 uppercase font-mono tracking-wider" id="hud-stop-type">IN-PERSON MEMORY</span>
+          <span class="text-xs sm:text-sm font-gujarati text-rose-300 font-semibold truncate max-w-[200px] sm:max-w-[280px]" id="hud-stop-title">
+            પહેલી મુલાકાત (Where It Began)
+          </span>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="flex items-center gap-2">
+        <button id="nav-prev-btn" onclick="goToPrevStop()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1 border border-slate-700 transition-all disabled:opacity-30 disabled:pointer-events-none">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          <span class="hidden sm:inline font-gujarati">પાછળ</span>
+        </button>
+        <button id="nav-next-btn" onclick="goToNextStop()" class="px-4 sm:px-5 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-lg shadow-rose-950/60 transition-all active:scale-95">
+          <span class="font-gujarati">આગળની યાદ</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Progress Fill Gauge -->
+      <div class="w-full bg-slate-950 rounded-full h-2.5 overflow-hidden border border-slate-800">
+        <div id="hud-progress-bar" class="bg-gradient-to-r from-amber-400 via-rose-500 to-emerald-400 h-full rounded-full transition-all duration-700" style="width: 3.2%;"></div>
+      </div>
+    </div>
+
+    <!-- HIGHWAY CANVAS WRAPPER -->
+    <div class="w-full max-w-5xl relative bg-[#090d16] rounded-3xl p-3 sm:p-6 border-2 border-slate-800 shadow-[0_0_90px_rgba(0,0,0,0.85)] overflow-hidden">
+      
+      <div class="relative w-full aspect-[16/10] min-h-[460px] sm:min-h-[580px] max-h-[680px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#0c1424] via-[#121c2e] to-[#080d16] border border-slate-800/80">
+        
+        <!-- Continuous Multi-Curve Winding SVG Highway -->
+        <svg id="road-svg" class="w-full h-full" viewBox="0 0 1000 600" preserveAspectRatio="none">
+          <!-- Outer Gravel Shoulder -->
+          <path id="svg-shoulder" d="M 50 510 C 260 510, 240 370, 480 370 C 720 370, 750 500, 930 490 C 990 480, 970 200, 800 170 C 620 140, 520 250, 340 230 C 160 210, 80 90, 250 80 C 420 70, 840 80, 940 80" fill="none" stroke="#334155" stroke-width="74" stroke-linecap="round" />
+          
+          <!-- Asphalt Road Ribbon -->
+          <path id="svg-asphalt" d="M 50 510 C 260 510, 240 370, 480 370 C 720 370, 750 500, 930 490 C 990 480, 970 200, 800 170 C 620 140, 520 250, 340 230 C 160 210, 80 90, 250 80 C 420 70, 840 80, 940 80" fill="none" stroke="#141d2b" stroke-width="58" stroke-linecap="round" />
+          
+          <!-- Animated Golden Dashed Centerline -->
+          <path id="svg-lane-line" class="road-travel-line" d="M 50 510 C 260 510, 240 370, 480 370 C 720 370, 750 500, 930 490 C 990 480, 970 200, 800 170 C 620 140, 520 250, 340 230 C 160 210, 80 90, 250 80 C 420 70, 840 80, 940 80" fill="none" stroke="#fbbf24" stroke-width="4.5" stroke-dasharray="14 14" stroke-linecap="round" />
+
+          <!-- Streetlamp Radiance Halos -->
+          <circle cx="250" cy="440" r="50" fill="rgba(251, 191, 36, 0.08)" />
+          <circle cx="680" cy="430" r="50" fill="rgba(244, 63, 94, 0.08)" />
+          <circle cx="820" cy="230" r="50" fill="rgba(251, 191, 36, 0.08)" />
+          <circle cx="450" cy="200" r="50" fill="rgba(168, 85, 247, 0.08)" />
+          <circle cx="210" cy="80" r="50" fill="rgba(251, 191, 36, 0.08)" />
+          <circle cx="920" cy="80" r="60" fill="rgba(16, 185, 129, 0.12)" />
+        </svg>
+
+        <!-- Dynamic Milestone Marker Nodes Layer -->
+        <div id="road-markers-container" class="absolute inset-0 pointer-events-none"></div>
+
+        <!-- Animated Couple Convertible Car Marker -->
+        <div id="couple-car" class="absolute top-0 left-0 w-20 h-14 -ml-10 -mt-7 transition-all duration-700 ease-out z-20 pointer-events-none filter drop-shadow-[0_12px_22px_rgba(0,0,0,0.95)]">
+          <div class="relative w-full h-full flex items-center justify-center">
+            
+            <!-- Headlight Cones -->
+            <div class="absolute left-14 w-32 h-20 pointer-events-none -mt-1 opacity-80" style="background: radial-gradient(ellipse at 15% 50%, rgba(254, 240, 138, 0.7) 0%, rgba(254, 240, 138, 0.2) 50%, transparent 80%); clip-path: polygon(0 40%, 100% 5%, 100% 95%, 0 60%);"></div>
+
+            <!-- Stylized Retro Couple Car SVG -->
+            <svg class="w-20 h-12" viewBox="0 0 110 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="55" cy="58" rx="46" ry="5.5" fill="#000000" opacity="0.65"/>
+              <path d="M 12 40 L 26 40 L 38 26 L 74 26 L 92 40 L 102 42 C 105 46 103 52 96 52 L 15 52 C 11 52 9 46 12 40 Z" fill="#e11d48" />
+              <path d="M 28 40 L 92 40" stroke="#fecdd3" stroke-width="2" stroke-linecap="round" />
+              <path d="M 40 27 L 50 12 L 56 12 L 48 27 Z" fill="#bae6fd" opacity="0.85" />
+              <!-- Avatars -->
+              <circle cx="48" cy="19" r="5" fill="#38bdf8" />
+              <circle cx="60" cy="20" r="5" fill="#f472b6" />
+              <path d="M 62 15 L 66 17 L 64 20 Z" fill="#fb7185" />
+              <!-- Antenna Floating Heart -->
+              <path d="M 54 3 C 51 0 47 2 49 5 L 54 9 L 59 5 C 61 2 57 0 54 3 Z" fill="#f43f5e" class="animate-bounce" />
+              <!-- Lights -->
+              <circle cx="100" cy="44" r="3.5" fill="#fef08a" />
+              <circle cx="12" cy="44" r="2.8" fill="#f43f5e" />
+              <!-- Wheels -->
+              <circle cx="30" cy="52" r="8" fill="#0f172a" stroke="#cbd5e1" stroke-width="2.5" />
+              <circle cx="30" cy="52" r="3.5" fill="#ffffff" />
+              <circle cx="82" cy="52" r="8" fill="#0f172a" stroke="#cbd5e1" stroke-width="2.5" />
+              <circle cx="82" cy="52" r="3.5" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Road Highway Sign Label -->
+        <div class="absolute bottom-3 inset-x-3 flex items-center justify-between text-[11px] text-slate-300 font-gujarati bg-black/70 px-4 py-2 rounded-xl backdrop-blur-md border border-white/10">
+          <span class="flex items-center gap-1.5">
+            <span class="text-amber-400">🎁</span>
+            <span>રસ્તાના કોઈપણ સ્ટોપ પર ક્લિક કરીને આપણી યાદો જુઓ (વિડીયો & ફોટો)</span>
+          </span>
+          <span class="font-mono text-amber-300 font-bold hidden sm:inline">ROUTE: 143 FOREVER</span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- TRIPLE MEDIA DISPLAY MODAL (VIDEO / PHONE SCREENSHOT / POLAROID) -->
+  <div id="memory-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative w-full max-w-4xl bg-gradient-to-b from-[#131929] to-[#0a0f18] border-2 border-rose-500/40 rounded-3xl shadow-[0_0_70px_rgba(244,63,94,0.35)] p-5 sm:p-8 my-auto overflow-hidden">
+      
+      <!-- Close Button -->
+      <button onclick="closeMemoryModal()" class="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center border border-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Badge Header -->
+      <div class="flex items-center gap-2 mb-4">
+        <span id="modal-stop-badge" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-rose-600 text-white shadow">
+          STOP #01
+        </span>
+        <span id="modal-category-badge" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-amber-300 border border-white/10">
+          🎥 Memory Reel
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        
+        <!-- LEFT: TRIPLE MEDIA CONTAINER -->
+        <div class="md:col-span-5 flex justify-center items-center">
+          
+          <!-- LAYOUT 1: PLAYABLE VIDEO CINEMA REEL FRAME -->
+          <div id="container-video-player" class="cinema-video-frame w-full max-w-sm aspect-[9/16] sm:aspect-[4/5] max-h-[460px] flex flex-col justify-between hidden">
+            <!-- Cinema Bezel Top Bar -->
+            <div class="p-3 bg-black/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between z-20">
+              <span class="text-[11px] font-mono text-rose-300 flex items-center gap-1.5">
+                <i data-lucide="film" class="w-3.5 h-3.5 text-rose-400"></i>
+                <span id="video-reel-label">REEL MEMORY</span>
+              </span>
+              <span class="text-[10px] bg-rose-600/70 text-white px-2 py-0.5 rounded-md font-mono">LIVE VIDEO</span>
+            </div>
+
+            <!-- Video Player Element with fallback -->
+            <div class="relative flex-1 w-full bg-black flex items-center justify-center overflow-hidden">
+              <video 
+                id="main-video-element" 
+                class="w-full h-full object-contain bg-black"
+                playsinline 
+                controls
+                preload="metadata"
+                loop
+              >
+                <source id="video-source-tag" src="" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <iframe
+                id="drive-video-embed"
+                class="w-full h-full border-0 bg-black hidden"
+                src=""
+                title="Google Drive video"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <!-- Cinema Bezel Bottom Controls -->
+            <div id="video-custom-controls" class="p-2.5 bg-black/80 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs text-slate-300 z-20">
+              <button onclick="toggleVideoPlayback()" class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-rose-600 text-white font-semibold hover:bg-rose-500">
+                <i data-lucide="play" class="w-3.5 h-3.5" id="video-play-btn-icon"></i>
+                <span id="video-play-btn-text">Play / Pause</span>
+              </button>
+              <button onclick="toggleVideoMute()" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200">
+                <i data-lucide="volume-2" class="w-4 h-4" id="video-mute-icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- LAYOUT 2: VIDEO CALL SMARTPHONE FRAME (For 9:16 screenshots) -->
+          <div id="container-video-call" class="phone-mockup-frame w-64 sm:w-72 aspect-[9/18.5] max-h-[460px] flex flex-col justify-between hidden">
+            <!-- Phone Dynamic Island & Status Bar -->
+            <div class="relative z-20 pt-2 px-4 flex items-center justify-between text-[11px] text-white/80 font-mono">
+              <span id="phone-clock">03:24</span>
+              <div class="w-20 h-4 bg-black rounded-full flex items-center justify-center gap-1.5 px-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[9px] text-emerald-400 font-sans">FaceTime</span>
+              </div>
+              <div class="flex items-center gap-1 text-[10px]">
+                <i data-lucide="wifi" class="w-3 h-3"></i>
+                <i data-lucide="battery" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+
+            <!-- The Screenshot -->
+            <div class="relative flex-1 w-full overflow-hidden flex items-center justify-center p-1">
+              <img id="img-video-call" src="" alt="Video Call Memory" class="phone-screen-img rounded-2xl" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80'" />
+              
+              <!-- Floating Mini Selfie Corner Cam -->
+              <div class="absolute top-4 right-4 w-16 h-20 rounded-xl bg-slate-900 border-2 border-white/40 overflow-hidden shadow-lg">
+                <div class="w-full h-full bg-slate-800 flex items-center justify-center text-[10px] text-slate-400 font-mono">
+                  YOU ❤️
+                </div>
+              </div>
+
+              <!-- Live Call Duration Pill -->
+              <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-white text-[11px] font-mono flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+                <span id="call-duration-text">01:42:18</span>
+              </div>
+            </div>
+
+            <!-- Phone Bottom Call Control Bar -->
+            <div class="p-3 bg-black/60 backdrop-blur-md border-t border-white/10 flex items-center justify-around z-20">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+                <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+                <i data-lucide="video" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-rose-600 flex items-center justify-center text-white text-xs shadow-md">
+                <i data-lucide="phone-off" class="w-4 h-4"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAYOUT 3: POLAROID FRAME (For Regular Photos) -->
+          <div id="container-polaroid" class="polaroid-frame p-3 sm:p-4 pb-7 rounded-xl text-slate-900 w-full max-w-xs transform -rotate-1 hover:rotate-0 transition-transform relative hidden">
+            <!-- Masking Tape -->
+            <div class="masking-tape-strip absolute -top-3 left-1/2 transform -translate-x-1/2 w-28 h-6 rotate-1 rounded-sm z-10"></div>
+            
+            <div class="relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-inner group">
+              <img id="img-polaroid" src="" alt="Polaroid Memory" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80'" />
+            </div>
+
+            <div class="mt-3 text-center">
+              <p id="polaroid-caption-date" class="font-handwritten text-lg text-rose-950 font-bold tracking-wide">
+                First Day We Met
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: GUJARATI ROMANTIC POETRY & NARRATIVE -->
+        <div class="md:col-span-7 flex flex-col justify-between space-y-4">
+          <div>
+            <h3 id="modal-heading-title" class="font-gujarati text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+              પહેલી મુલાકાત
+            </h3>
+            <p id="modal-date-label" class="text-xs font-mono text-amber-300 mt-1 flex items-center gap-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+              <span>12 ઓક્ટોબર</span>
+            </p>
+          </div>
+
+          <!-- Highlight Gujarati Quote Box -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-rose-950/40 border border-rose-700/60 shadow-inner">
+            <p class="text-xs text-rose-300 font-semibold mb-1 flex items-center gap-1.5">
+              <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-400 fill-rose-400"></i>
+              <span class="font-gujarati">તારા માટે ખાસ પ્રેમ શાયરી:</span>
+            </p>
+            <p id="modal-gujarati-text" class="font-gujarati font-bold text-rose-100 text-lg sm:text-xl leading-relaxed">
+              "જ્યારે પહેલી વાર તને જોઈ ત્યારે સમય થંભી ગયો હતો..."
+            </p>
+            <p id="modal-english-text" class="mt-2 text-xs italic text-amber-200/90 font-serif border-t border-rose-800/60 pt-2">
+              "The moment I saw you for the first time, time stood still..."
+            </p>
+          </div>
+
+          <!-- Story Narrative -->
+          <p id="modal-story-narrative" class="text-stone-300 font-gujarati text-sm sm:text-base leading-relaxed"></p>
+
+          <!-- Modal Navigation Bar -->
+          <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+            <button onclick="sendLoveReaction(event)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-rose-300 text-xs font-gujarati flex items-center gap-1.5 border border-slate-700 transition-colors">
+              <i data-lucide="heart" class="w-4 h-4 fill-rose-500"></i>
+              <span>પ્રેમ મોકલો ❤️</span>
+            </button>
+
+            <button onclick="goToNextStop()" class="px-5 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-gujarati font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-rose-950/50 transition-all active:scale-95">
+              <span>આગળનો સ્ટોપ</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GRAND FINALE CELEBRATION (STOP 31) -->
+  <section id="grand-finale-section" class="relative z-10 w-full max-w-4xl mx-auto px-4 py-16 hidden">
+    <div class="bg-gradient-to-b from-[#1a1233] via-[#22133d] to-[#0c0f1a] rounded-3xl p-6 sm:p-12 border-4 border-rose-500/50 shadow-[0_0_80px_rgba(244,63,94,0.45)] text-center relative overflow-hidden">
+      
+      <!-- Highway Final Arch -->
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-rose-950/90 border-2 border-rose-500 text-rose-200 text-xs sm:text-sm font-mono tracking-widest uppercase mb-4 shadow-lg">
+        <i data-lucide="party-popper" class="w-4 h-4 text-amber-400"></i>
+        <span>FINAL STOP #31: BIRTHDAY PARADISE CITY</span>
+      </div>
+
+      <h2 class="font-gujarati text-3xl sm:text-5xl font-extrabold text-white">
+        જન્મદિવસની હાર્દિક શુભકામનાઓ, <br>
+        <span class="font-script text-5xl sm:text-7xl text-rose-400 font-normal" id="finale-name">મારી જાન</span>! 🎂
+      </h2>
+
+      <p class="font-gujarati text-rose-100 text-base sm:text-lg mt-3 max-w-xl mx-auto leading-relaxed">
+        આપણી ૩૧ યાદોની સફરનો આ સૌથી મીઠો અને અનમોલ પડાવ છે. કેકની મીણબત્તીઓ પર ક્લિક કરીને ઓલવો અને એક સરસ વિશ માંગો!
+      </p>
+
+      <!-- INTERACTIVE BIRTHDAY CAKE -->
+      <div class="my-10 flex flex-col items-center justify-center">
+        <!-- 3 Interactive Candle Flames -->
+        <div class="flex items-end justify-center space-x-8 mb-[-8px] relative z-20">
+          <div class="flex flex-col items-center cursor-pointer group" onclick="toggleCandleFlame(0)" title="ક્લિક કરીને ઓલવો">
+            <div id="candle-flame-0" class="w-4 h-7 rounded-full bg-gradient-to-t from-orange-400 via-amber-300 to-yellow-100 flame-glowing transition-all transform origin-bottom"></div>
+            <div class="w-1 h-2 bg-stone-700"></div>
+            <div class="w-4 h-12 rounded-t-sm bg-gradient-to-r from-rose-400 to-rose-500 shadow-sm"></div>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer group" onclick="toggleCandleFlame(1)" title="ક્લિક કરીને ઓલવો">
+            <div id="candle-flame-1" class="w-5 h-8 rounded-full bg-gradient-to-t from-orange-400 via-amber-300 to-yellow-100 flame-glowing transition-all transform origin-bottom"></div>
+            <div class="w-1.5 h-2 bg-stone-700"></div>
+            <div class="w-5 h-16 rounded-t-sm bg-gradient-to-r from-amber-400 to-amber-500 shadow-sm"></div>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer group" onclick="toggleCandleFlame(2)" title="ક્લિક કરીને ઓલવો">
+            <div id="candle-flame-2" class="w-4 h-7 rounded-full bg-gradient-to-t from-orange-400 via-amber-300 to-yellow-100 flame-glowing transition-all transform origin-bottom"></div>
+            <div class="w-1 h-2 bg-stone-700"></div>
+            <div class="w-4 h-12 rounded-t-sm bg-gradient-to-r from-rose-400 to-rose-500 shadow-sm"></div>
+          </div>
+        </div>
+
+        <!-- Tier 1 -->
+        <div class="relative w-48 sm:w-64 h-16 rounded-t-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-rose-600 border-2 border-rose-400 shadow-inner flex items-center justify-center overflow-hidden">
+          <div class="absolute top-0 inset-x-0 h-4 bg-white/40 rounded-b-xl"></div>
+          <span class="font-gujarati text-white text-xl sm:text-2xl font-bold z-10 drop-shadow">વિશ માંગ મારી ડોબી!✨</span>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="relative w-64 sm:w-88 h-24 rounded-t-2xl bg-gradient-to-r from-rose-800 via-rose-700 to-rose-800 border-2 border-rose-500 shadow-2xl flex items-center justify-center overflow-hidden">
+          <div class="absolute -top-1 inset-x-0 h-6 bg-pink-300/40 rounded-b-2xl"></div>
+          <div class="text-amber-200 font-sans font-extrabold tracking-wider text-base sm:text-lg z-10">
+            HAPPY BIRTHDAY RUCHI! 🎉🎂🎁
+          </div>
+        </div>
+
+        <!-- Cake Stand -->
+        <div class="w-72 sm:w-96 h-5 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-400 rounded-full shadow-2xl -mt-1 border-t-2 border-white"></div>
+
+        <button onclick="extinguishAllFlames()" class="mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-gujarati font-bold text-sm sm:text-base shadow-lg shadow-rose-950 flex items-center gap-2 transition-transform active:scale-95">
+          <i data-lucide="wind" class="w-5 h-5"></i>
+          <span>બધી મીણબત્તીઓ ઓલવો & ફટાકડા ફોડો 🎆</span>
+        </button>
+      </div>
+
+      <!-- STATIONERY UNSEALED LOVE LETTER -->
+      <div class="mt-14 max-w-2xl mx-auto text-left">
+        <div class="bg-[#fcf8f2] text-slate-900 border-4 border-amber-200/90 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+          <div class="flex items-center justify-between border-b border-stone-300 pb-3 mb-5">
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail-open" class="w-5 h-5 text-rose-600"></i>
+              <span class="font-gujarati font-bold text-xl text-stone-900">પ્રેમથી લખાયેલો પત્ર</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500 uppercase">Special Birthday Mail</span>
+          </div>
+
+          <div id="finale-letter-body" class="font-gujarati text-stone-800 space-y-4 text-base sm:text-lg leading-relaxed"></div>
+
+          <div class="mt-8 pt-4 border-t border-stone-300 flex justify-between items-end">
+            <div>
+              <p class="text-xs font-gujarati text-stone-500">❤️ તારો પ્રેમી ❤️ ,</p>
+              <p class="font-script text-4xl sm:text-5xl text-rose-600 font-normal mt-1" id="finale-signoff">તારો કાયમી હમસફર ❤️</p>
+            </div>
+            <div class="w-12 h-12 rounded-full border-2 border-rose-300 bg-rose-100 flex items-center justify-center text-rose-500 shadow">
+              <i data-lucide="heart" class="w-6 h-6 fill-rose-500"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COLLAPSIBLE STOPS DRAWER (MINI-MAP) -->
+  <div id="stops-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-96 bg-[#0c121e]/95 backdrop-blur-xl border-l border-white/10 p-5 flex flex-col transform translate-x-full transition-transform duration-300 shadow-2xl">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+      <div class="flex items-center gap-2">
+        <i data-lucide="map-pin" class="w-5 h-5 text-amber-400"></i>
+        <h3 class="font-sans font-bold text-base text-white">૩૧ યાદોની સૂચિ</h3>
+      </div>
+      <button onclick="toggleStopsDrawer()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-slate-700">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <div id="drawer-items-list" class="flex-1 overflow-y-auto space-y-2 pr-1"></div>
+  </div>
+
+  <!-- IN-BROWSER PHOTO & VIDEO STOP EDITOR MODAL -->
+  <div id="editor-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-3xl p-6 shadow-2xl my-auto">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+        <h3 class="font-sans font-bold text-lg text-white flex items-center gap-2">
+          <i data-lucide="edit" class="w-5 h-5 text-amber-400"></i>
+          <span>Add / Edit Your Photos & Videos (ફોટો/વિડીયો બદલો)</span>
+        </h3>
+        <button onclick="closeEditorModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-slate-700">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 max-h-[65vh] overflow-y-auto pr-1">
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1">Select Stop To Edit (1 to 31):</label>
+          <select id="editor-select-stop" onchange="loadStopIntoEditor()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs"></select>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1">Display Media Type:</label>
+          <select id="editor-input-type" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs">
+            <option value="video">Playable Video Clip (mp4 / webm / reel)</option>
+            <option value="video_call">Video Call (Vertical Smartphone 9:16 Mockup)</option>
+            <option value="polaroid">Polaroid (In-Person Photo Frame)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1">Media Path / Video URL (MP4/WebM URL or Google Drive share link):</label>
+          <input type="text" id="editor-input-img" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs font-mono" placeholder="videos/memory.mp4 or https://...">
+          <p class="mt-1 text-[10px] text-slate-500">Drive videos must be shared as “Anyone with the link” can view.</p>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1">Title (Gujarati or English):</label>
+          <input type="text" id="editor-input-title" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs font-gujarati">
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1">Romantic Gujarati Quote:</label>
+          <textarea id="editor-input-quote" rows="2" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs font-gujarati"></textarea>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 border-t border-slate-800 flex justify-end gap-2">
+        <button onclick="closeEditorModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs">Cancel</button>
+        <button onclick="saveEditorStopChanges()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 text-white font-bold text-xs shadow-md">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="relative z-10 py-6 border-t border-white/10 bg-[#060913] text-center text-xs text-slate-500 font-gujarati">
+    <span>🛣️ The Road Trip of Us • ૩૧ મીઠી યાદો • વિડીયો & ફોટો પ્રેમ સફર ❤️</span>
+  </footer>
+
+  <script>
+    /* =========================================================================
+       COMPLETE 31-STOP ROAD TRIP DATASET (WITH REAL PLAYABLE VIDEO CLIPS)
+       Types supported: "video", "video_call", "polaroid"
+       ========================================================================= */
+    const ROAD_TRIP_STOPS = [
+      {
+        id: 0,
+        type: "polaroid",
+        stopCode: "STOP 01",
+        badge: "✨ Where It Began",
+        title: "પહેલી મુલાકાત (The Day We Met)",
+        date: "અમારી પ્રથમ મુલાકાત",
+        img: "https://drive.google.com/thumbnail?id=1CHSWC0N_tZzy6-H_5TDTq7tn4sT59ZX9&sz=w1000",
+        gujaratiQuote: "જ્યારે પહેલી વાર આપણે મળ્યા ત્યારે સમય જાણે થંભી ગયો હતો, અને દિલમાં બસ એક જ ડર હતો કે ઘડિયાળનો કાંટો આગળ કેમ વધે છે... કેમ કે મળતાંની સાથે જ મન વિચારવા લાગ્યું હતું કે હવે છૂટા કેવી રીતે પડવું અને ફરી ક્યારે મળાશે!..",
+        englishQuote: "When we met for the first time, time seemed to stand still, and my heart had just one fear—why the hands of the clock were ticking forward... because the moment we met, my mind started worrying about how we would part ways, and when we would get to meet again.",
+        story: "એ બાગની હરિયાળી, તારો સ્પર્શ અને હાથમાં ભીડાયેલો તારો હાથ...એકબીજાને અઢેલીને જ્યારે આપણે એ પહેલો ફોટો ક્લિક કર્યો હતો ને,ત્યારે સમય ભલે આગળ વધી ગયો, પણ આપણો એ પ્રેમ એ તસવીરમાં હંમેશ માટે અમર થઈ ગયો.આપણી લાઈફનો પહેલો સાથેનો ફોટો—જ્યાંથી આપણી સુંદર સફર શરૂ થઈ!",
+        pathPercent: 0.02
+      },
+      {
+        id: 1,
+        type: "video",
+        stopCode: "STOP 02",
+        badge: "🌙 1:45 AM Call",
+        title: "પહેલો મોડી રાતનો વિડીયો કોલ",
+        date: "સૂર્યોદય સુધીની વાતો",
+        img: "https://drive.google.com/file/d/11aEUTg82wQvwZLQL3q9eeKocFf9kB5q3/view?usp=drivesdk",
+        gujaratiQuote: "જ્યારે 'બસ ૫ મિનિટ' ની વાત ક્યારે સૂર્યોદયમાં ફેરવાઈ ગઈ એની ખબર જ ના પડી...",
+        englishQuote: "When 'just 5 minutes before bed' accidentally turned into sunrise.",
+        story: "આપણો પહેલો મોડી રાતનો વિડીયો કોલ! ઊંઘ આંખોમાં હતી પણ તારો ચહેરો જોવાની અને તારો અવાજ સાંભળવાની લાલચ સામે ઊંઘ પણ હારી ગઈ.",
+        pathPercent: 0.05
+      },
+      {
+        id: 2,
+        type: "video",
+        stopCode: "STOP 03",
+        badge: "🎥 Reel: Her Laugh",
+        title: "તારા ખડખડાટ હસવાની વિડીયો ક્લિપ",
+        date: "લાઈવ હાસ્યની ક્ષણ",
+        // Replace with your local video: e.g. "videos/laugh.mp4"
+        img: "https://drive.google.com/file/d/1HMY_YBa3OdeVKbSMwk_tz_nNqoYvm_K4/view?usp=drivesdk",
+        gujaratiQuote: "તારું ખડખડાટ હાસ્ય મારા કાનમાં કોઈ મધુર સંગીત જેવું ગૂંજે છે, તું હસે એટલે મારી દુનિયા હસે છે...",
+        englishQuote: "The video of your pure, unfiltered laughter is my most prized possession.",
+        story: "મેં છુપાઈને તારો આ વિડીયો ઉતાર્યો હતો જ્યારે તું કોઈ વાત પર દિલ ખોલીને હસતી હતી. જ્યારે પણ હું ઉદાસ હોઉં ત્યારે આ વિડીયો મને હસાવી દે છે.",
+        pathPercent: 0.08
+      },
+      {
+        id: 3,
+        type: "polaroid",
+        stopCode: "STOP 04",
+        badge: "☕ First Movie Date",
+        title: "અંધારું થિયેટર અને તારો સાથ",
+        date: "આપણી પહેલી સિનેમા ડેટ",
+        img: "https://drive.google.com/thumbnail?id=1baP4rS0JKkm6AJvwTNKeP6rpGwjcc4gE&sz=w1000",
+        gujaratiQuote: "અંધારા થિયેટરમાં ચાલતી ફિલ્મ કરતાં, મારું આખું ધ્યાન તારા ચહેરા પર અને ધીમેથી પકડાયેલા તારા હાથ પર જ હતું.",
+        englishQuote: "In that dark cinema, more than the movie playing on the screen, my entire world was lost in your face and the gentle warmth of holding your hand.",
+        story: "આપણે પહેલી વાર ફિલ્મ જોવા ગયા હતા, અને એ સમયે તારા હાથમાં હાથ પકડીને બેઠા હોવાનો અનુભવ એ જ મીઠો યાદગાર પળ હતો. એ દિવસની ગરમાગરમ ચા અને તારી હસતી આંખો હંમેશા મારા દિલમાં વસેલી છે.",
+        pathPercent: 0.12
+      },
+      {
+        id: 4,
+        type: "polaroid",
+        stopCode: "STOP 05",
+        badge: "🍽️ First Dinner Date",
+        title: "આપણી એ ડિનર ડેટ",
+        date: "આપણું પહેલું રોમેન્ટિક ડિનર",
+        img: "https://drive.google.com/thumbnail?id=1s4sM6yt-T6sTq4TGN6A8NTbPddCgrmmS&sz=w1000",
+        gujaratiQuote: "દહીંવડાં મોં બગાડીને સાઈડમાં મૂકી દીધા પછી પણ, મારા કરતાં વધારે જમીને તેં જે તૃપ્તિનો ઓડકાર લીધો ને... એ જોઈને જ મારું પેટ ભરાઈ ગયું હતું!",
+        englishQuote: "Pushing the dahi vada aside with that dramatic face, and then proceeding to eat far more than me anyway... seeing you enjoy your food like that completely melted my heart!",
+        story: "આપણી એ ડિનર ડેટ પર આપણે સાથે બેસીને જમવા બેઠા હતા. ઓર્ડર કરેલાં દહીંવડાં તો તને જરાય ન ભાવ્યાં અને તેં તરત રિજેક્ટ કરી દીધાં, પણ બાકીનું ખાવાનું તું મારા કરતાં પણ વધારે સટાસટ જમી ગઈ! શરૂઆતમાં શરમાતી છોકરી છેલ્લે આટલી મોજથી પેટભરીને ખાતી હતી, એ પળ અને તારી એ બિન્દાસ ભૂખ હંમેશા મારી ફેવરિટ યાદ રહેશે.",
+        pathPercent: 0.15
+      },
+      {
+        id: 5,
+        type: "video",
+        stopCode: "STOP 06",
+        badge: "🚗 Dance Reel",
+        title: "આપણો ફર્સ્ટ કપલ ડાન્સ વિડીયો",
+        date: "સનસેટ રસ્તો",
+        // Replace with your local video: e.g. "videos/drive.mp4"
+        img: "https://drive.google.com/file/d/1TwdZoam4m_G2eKneL8ALymynJp7QcBFQ/view?usp=drivesdk",
+        gujaratiQuote: "આપણો પહેલો કપલ ડાન્સ... કેટલો અદ્ભુત હતો એ પળ! તારી સાથે વિતાવેલી દરેક ક્ષણમાં એ ક્ષણ હંમેશા મારા દિલની સૌથી નજીક રહેશે.",
+        englishQuote: "Our first couple dance together was simply magical... Holding your hand, matching steps to the music, and losing all track of the world—it's a moment my heart will cherish forever.",
+        story: "ધીમા સંગીત વચ્ચે તારા હાથમાં હાથ પરોવીને આપણે પહેલો કપલ ડાન્સ કર્યો હતો. એ ક્ષણનો વિડીયો આજે પણ એટલો જ જીવંત લાગે છે.",
+        pathPercent: 0.18
+      },
+      {
+        id: 6,
+        type: "polaroid",
+        stopCode: "STOP 07",
+        badge: "🚆 Pune to Ahmedabad",
+        title: "લાંબી સફર અને તને મળવાની તાલાવેલી",
+        date: "બપોરે ૧ વાગ્યાની આસપાસ",
+        img: "https://drive.google.com/thumbnail?id=1QWnnOR-Kkkf1dUiiH2ORataVg_aNtNiZ&sz=w1000",
+        gujaratiQuote: "પુણેથી અમદાવાદની એ લાંબી સફરમાં આંખો બસ બહાર જોતી હતી અને મનમાં એક જ રટણ હતું—ક્યારે સ્ટેશન આવે ને ક્યારે તને જોઉં! બપોરે ૧ વાગ્યે પહોંચતાં જ સૌથી પહેલાં તને જોવાનો જે સંતોષ હતો, એ આપણા એ ફોટામાં કેદ થઈ ગયો. લાંબી સફર પછી મળ્યાની એ ખુશી આજે પણ એ તસવીરમાં સ્પષ્ટ દેખાય છે.",
+        englishQuote: "On that long journey from Pune to Ahmedabad, looking out the window, my heart had just one desperate prayer—how soon till I arrive and finally see you!",
+        story: "બીજી વાર પુણેથી લાંબી મુસાફરી ખેડીને બપોરે લગભગ ૧ વાગ્યે પહોંચ્યો હતો. રસ્તાના દરેક કિલોમીટર બસ એ જ વિચારમાં કપાયા હતા કે અમદાવાદ ક્યારે આવે અને ક્યારે તારો સાથ મળે.", 
+        pathPercent: 0.22
+      },
+      {
+        id: 7,
+        type: "polaroid",
+        stopCode: "STOP 08",
+        badge: "☀️ Sunny Riverfront",
+        title: "બળબળતા બપોરે સાબરમતીનો કાંઠો",
+        date: "રિવરફ્રન્ટની એ ગરમી અને તારો સાથ",
+        img: "https://drive.google.com/thumbnail?id=1WuyBRUXJpm6H-RsOfMtDKAzsXStHKMT4&sz=w1000",
+        gujaratiQuote: "બપોરના આકરા તડકા કરતાં પણ વધારે તેજ તારા ચહેરા પરની એ મુસ્કાનનું હતું, જેણે એ ગરમીને પણ મીઠી બનાવી દીધી.",
+        englishQuote: "Far brighter than the harsh midday sun was the warmth of your smile, turning even the scorching heat into a beautiful memory.",
+        story: "ભરબપોરે રિવરફ્રન્ટના એ સુમસામ રસ્તે, તડકાની પરવા કર્યા વગર આપણે લીધેલી એ સેલ્ફી... તારો એ હાથ પકડીને આખી દુનિયા જાણે એ ગરમીમાં પણ ઠંડક અનુભવતી હતી.", 
+        pathPercent: 0.25
+      },
+      {
+        id: 8,
+        type: "polaroid",
+        stopCode: "STOP 09",
+        badge: "🍕 Hunger Games",
+        title: "ઓનલાઈન ઓર્ડર અને તારી 'ભુક્ખડ' મસ્તી",
+        date: "આપણી ફાસ્ટ ફૂડ વાળી સાંજ",
+        img: "https://drive.google.com/thumbnail?id=1sSydmCxp_cBSUi5OR2axBPbR3df_yUuu&sz=w1000",
+        gujaratiQuote: "હજી તો મારો પહેલો કોળિયો માંડ પૂરો થતો, ત્યાં તારી પ્લેટ અડધી ખાલી થઈ જતી! તારા એ સ્પીડ વાળા ખાવાના અને મારી ધીમી ગતિની મસ્તીની એ સાંજ યાદ છે ને?",
+        englishQuote: "By the time I’d barely finished my first bite, your plate would already be half empty! I still laugh thinking about your 'super-fast eating' and our endless teasing that evening.",
+        story: "સાંજે ઓનલાઈન જમવાનું ઓર્ડર કરીને જ્યારે આપણે બેઠા, ત્યારે તું તો જાણે કોઈ હરીફાઈમાં હોય તેમ મારા કરતાં કેટલીય વહેલી ખાઈ ગઈ! તને 'ભુક્ખડ' કહીને ખીજવતાં અને મસ્તી કરતાં કરતાં લીધેલો આ ફોટો આજે પણ એ હાસ્યની યાદ અપાવે છે.",
+        pathPercent: 0.28
+      },
+      {
+        id: 9,
+        type: "video_call",
+        stopCode: "STOP 10",
+        badge: "✍️ Little Distractions",
+        title: "મારી ઓનલાઇન મીટિંગ અને તારું 'I Love You'",
+        date: "કામની વચ્ચે વહાલો વિક્ષેપ",
+        img: "https://drive.google.com/thumbnail?id=1S-qDxXR40jYTv-xsH08WhTwMoOJKCclw&sz=w1000",
+        gujaratiQuote: "હું મીટિંગમાં ગંભીર થઈને વાતો કરતો હતો, અને તેં મારા આખા હાથ પર પેનથી 'I Love You' લખી દીધું! તારી એ મસ્તી મારા કામ કરતાં લાખ ગણી વધુ વહાલી હતી.",
+        englishQuote: "While I was busy looking all serious in a meeting, you took a pen and scribbled 'I Love You' all over my arm! That playful distraction was worth infinitely more than any work.",
+        story: "ઓફિસની મીટિંગ ચાલુ હતી અને તું છાનીમાની આવીને મારા આખા હાથ પર 'I Love You' લખવા લાગી. હું હસવું રોકી રહ્યો હતો અને તું પોતાનું પ્યારું પરાક્રમ કરીને મારા હાથનો એ ફોટો લેતી હતી. આજે પણ એ અક્ષરો દિલમાં લખાયેલા છે.",
+        pathPercent: 0.32
+      },
+      {
+        id: 10,
+        type: "polaroid",
+        stopCode: "STOP 11",
+        badge: "🍛 Late Night Pav Bhaji",
+        title: "તારી ફેવરિટ પાવભાજી અને મોડી રાતની ભૂખ",
+        date: "રેસ્ટોરન્ટમાં અડધી રાતની મહેફિલ",
+        img: "https://drive.google.com/thumbnail?id=1FRDUAXzg2_7RGOBxXhI8ac1CMCKyi5Mj&sz=w1000",
+        gujaratiQuote: "તારા ચહેરા પરની એ ખુશી જોવા જેવી હતી જ્યારે ગરમાગરમ બટરવાળી પાવભાજી ટેબલ પર આવી! તને ભાવતી વસ્તુ સાથે માણવી એ મારી સૌથી વહાલી ક્ષણ બની ગઈ.",
+        englishQuote: "The pure joy on your face when that hot, buttery pav bhaji arrived at the table was priceless! Sharing your absolute favorite food together made that late night so unforgettable.",
+        story: "રાત્રે અચાનક તને ભાવતી પાવભાજી ખાવા માટે આપણે રેસ્ટોરન્ટ પહોંચ્યા હતા. ગરમાગરમ પાવ, માખણથી લથપથ ભાજી અને તારી ખુશીથી ચમકતી આંખો... એ મોડી રાતની મીઠી ક્ષણ આપણા આ ફોટામાં હંમેશ માટે કેદ થઈ ગઈ.",
+        pathPercent: 0.35
+      },
+      {
+        id: 11,
+        type: "video",
+        stopCode: "STOP 12",
+        badge: "💃 Dance Clip",
+        title: "આપણી મસ્તીભર્યો નાચતો વિડીયો",
+        date: "ખુલ્લેઆમ ઝૂમવાની ક્ષણો",
+        // Replace with your local video: e.g. "videos/dance.mp4"
+        img: "https://drive.google.com/thumbnail?id=11qchQZseR4KM5rfhXp9LjKjSQhUOJu9E&sz=w1000",
+        gujaratiQuote: "કોઈ સ્ટેપ્સની ચિંતા નહોતી ને નહોતો કોઈ તાલનો મેળ, બસ એકબીજાની સાથે ખુશીથી ઝૂમવાનો એ અનોખો ખેલ હતો!",
+        englishQuote: "There were no rehearsed steps, no rhythm to chase, just wild carefree laughter and us dancing away into our own little world!",
+        story: "આપણે બંને સાથે મળીને મસ્તીમાં નાચતા હતા, કોઈની શરમ વગર હસતા-કૂદતા હતા એ યાદગાર ક્ષણનો વિડીયો... આજે પણ એ વિડીયો જોતાં જ એ જ મસ્તીભર્યો ઉત્સાહ અને તારા હાસ્યનો રણકો તાજો થઈ જાય છે.",
+        pathPercent: 0.38
+      },
+      {
+        id: 12,
+        type: "video_call",
+        stopCode: "STOP 13",
+        badge: "🎁 Online Saree Surprise",
+        title: "ઓનલાઈન સરપ્રાઈઝ અને તારી 'પાતળી સાડી'ની ફરિયાદ",
+        date: "ગિફ્ટ અને મીઠી નોકઝોક",
+        img: "https://drive.google.com/thumbnail?id=16bbnpd8lHclSsJcomPclSmNR7rJUTlHB&sz=w1000",
+        gujaratiQuote: "મેં તો પ્રેમથી ઓનલાઈન સાડી મોકલી હતી, પણ ખોલતાં જ તારું રિએક્શન હતું—'આ તો કેટલી પાતળી છે!' તારી એ માસૂમ ફરિયાદ પણ કેટલી મીઠી લાગતી હતી.",
+        englishQuote: "I sent that saree online with so much love, but the moment you unpacked it, you went—'Wait, isn't this way too thin?!' Even your cute little complaints always make me smile.",
+        story: "મેં તારા માટે પ્રેમથી ઓનલાઈન સાડી ગિફ્ટ ઓર્ડર કરી હતી. પાર્સલ ખોલીને તું રાજી તો થઈ, પણ તરત જ કહેવા લાગી કે આ સાડી બહુ પાતળી છે! એ સાડી પહેરીને તારી એ મીઠી ફરિયાદ સાથે લીધેલો આ ફોટો આપણી એ વહાલી નોકઝોકની કાયમી યાદ બની ગયો.", 
+        pathPercent: 0.42
+      },
+      {
+        id: 13,
+        type: "polaroid",
+        stopCode: "STOP 14",
+        badge: "💋 Sealed With A Kiss",
+        title: "કાગળ પર તારા હોઠોની છાપ",
+        date: "એક ગુલાબી પ્રેમપત્ર",
+        img: "https://drive.google.com/thumbnail?id=12DQ6mcTTGDcqNqSj_KHThCYedxiPp_El&sz=w1000",
+        gujaratiQuote: "કાગળના એ ટુકડા પર તેં લગાવેલી લિપસ્ટિકની છાપ માત્ર રંગ નહોતો, પણ મારા માટે તારા વહાલની સૌથી કિંમતી નિશાની હતી.",
+        englishQuote: "That lipstick kiss you pressed onto paper was not just a shade of pink, but the sweetest, most priceless mark of your love for me.",
+        story: "તેં પ્રેમથી કાગળ પર લિપસ્ટિક લગાવીને તારા હોઠોનું ચુંબન અંકિત કરીને મને આપ્યું હતું. એ કાગળનો ટુકડો આજે પણ મારા દિલની સૌથી નજીક સાચવેલો છે, જેમાં તારા સ્પર્શની મીઠાશ કાયમ મહેકે છે.",
+        pathPercent: 0.45
+      },
+      {
+        id: 14,
+        type: "video_call",
+        stopCode: "STOP 15",
+        badge: "🙏 Solah Somwar Vrat",
+        title: "મારા માટે તારા સોળ સોમવારના ઉપવાસ",
+        date: "શ્રદ્ધા અને નિસ્વાર્થ પ્રેમ",
+        img: "https://drive.google.com/thumbnail?id=1CojUNGTKqx873cUQ8hTFoufSlb1H5Pu3&sz=w1000", 
+        gujaratiQuote: "મારા સુખ અને સાથ માટે તેં કરેલા એ સોળ સોમવારના વ્રત માત્ર ભક્તિ નહોતી, પણ મારા પ્રત્યેના તારા અતૂટ અને પવિત્ર પ્રેમનો જીવંત પુરાવો હતો.",
+        englishQuote: "The Solah Somwar fasts you observed with pure devotion for my well-being and our togetherness weren't just rituals, but the most sacred proof of your unconditional love.",
+        story: "તેં મારા માટે શ્રદ્ધાપૂર્વક સોળ સોમવારના વ્રત રાખ્યા હતા. આખો દિવસ ભૂખ્યા રહીને મહાદેવ પાસે તેં ફક્ત મારા સુખ અને આપણી એકતાની પ્રાર્થના માંગી હતી. તારી એ પવિત્ર ભાવના અને ત્યાગ મારા જીવનની સૌથી અમૂલ્ય ભેટ છે.",
+        pathPercent: 0.48
+      },
+      {
+        id: 15,
+        type: "polaroid",
+        stopCode: "STOP 16", 
+        badge: "🛕 Temple Visit",
+        title: "તૈયાર થઈને સંધ્યાકાળે મંદિર દર્શન",
+        date: "પવિત્ર સાંજ અને તારો સાથ",
+        img: "https://drive.google.com/thumbnail?id=1YA4Zemuiv68YfDGC6KAclrqK3HAYbHhI&sz=w1000",
+        gujaratiQuote: "મંદિરની શાંતિ અને દીવાઓના અજવાળા વચ્ચે, ભગવાન પાસે કંઈ પણ માંગતા પહેલાં જ મારી નજર તારા પર પડી અને દિલ બોલી ઊઠ્યું—મારે જે જોઈતું હતું તે તો મળી ગયું!",
+        englishQuote: "Amidst the serene stillness of the temple and the soft glow of the diyas, before I could ask for anything in prayer, my eyes caught you and my heart whispered—I already have my greatest blessing.",
+        story: "આપણે બંને સરસ રીતે તૈયાર થઈને સંધ્યા સમયે મંદિરે દર્શન કરવા ગયા હતા. ઘંટના નાદ, અગરબત્તીની સુગંધ અને હાથ જોડીને સાથે ઊભા રહેવાની એ પવિત્ર ક્ષણ... મંદિરમાં સાથે વિતાવેલી એ શાંત સાંજ આપણા આ ફોટામાં હંમેશ માટે સચવાઈ ગઈ.",
+        pathPercent: 0.52 
+      },
+      {
+        id: 16,
+        type: "video_call",
+        stopCode: "STOP 17",
+        badge: "🚲 Riverfront Cycling",
+        title: "રિવરફ્રન્ટ પર સાયકલિંગ અને તારું સપનું",
+        date: "સાબરમતી કાંઠે પૂરી થયેલી ઈચ્છા",
+        img: "https://drive.google.com/thumbnail?id=1c6tp9cqfM7mgFCq-4qdgVyU4MNJ5WbPP&sz=w1000",
+        gujaratiQuote: "સાયકલ ચલાવતી વખતે તારા ચહેરા પરની એ અલ્લડ ખુશી અને 'મારું સપનું પૂરું થયું' બોલતાં ચમકતી તારી આંખો... એ ક્ષણ મારા માટે અનમોલ બની ગઈ.",
+        englishQuote: "The sheer, childlike joy on your face while cycling, and your sparkling eyes when you said 'my dream finally came true'... that moment became priceless to me.",
+        story: "રિવરફ્રન્ટ પર સાયકલ ચલાવવાની તારી બહુ જ ઈચ્છા હતી. જ્યારે આપણે સાથે પેડલ મારતા આગળ વધ્યા અને તેં ખુશ થઈને કહ્યું કે આજે તારું આ સપનું પૂરું થયું, ત્યારે તારા એ ખિલખિલાટ હાસ્ય સાથે લીધેલો આ ફોટો આપણા સૌથી મીઠા સંભારણામાં વણાઈ ગયો.",
+        pathPercent: 0.55
+      },
+      {
+        id: 17,
+        type: "polaroid",
+        stopCode: "STOP 18",
+        badge: "🌃 Riverfront Night",
+        title: "રિવરફ્રન્ટની એ જાદુઈ રાત",
+        date: "લાઈટોના અજવાળે સાબરમતી કાંઠો",
+        img: "https://drive.google.com/thumbnail?id=1Rp5-Q6oXpEuKcRZ9JVZ1j6sncaFZGo8x&sz=w1000",
+        gujaratiQuote: "રાતના અંધારામાં ઝગમગતી શહેરની લાઈટો અને નદીની ઠંડી લહેરો વચ્ચે, તારો હાથ પકડીને બેસવું એ સાચે જ એક જાદુ જેવું લાગતું હતું.",
+        englishQuote: "Between the city lights glistening in the dark waters and the cool night breeze, sitting right beside you holding your hand felt like pure magic.",
+        story: "રિવરફ્રન્ટ પર વિતાવેલી એ રાત ખરેખર કેટલી મસ્ત અને શાંત હતી! રાત્રિના સુમસામ કિનારે લાઈટોના પ્રતિબિંબ વચ્ચે ધીમી વાતો કરવી અને તારી સાથે એ પળને માણી લેવી... એ અદ્ભુત રાતની યાદ આજે પણ આ ફોટામાં એટલી જ જીવંત છે.",
+        pathPercent: 0.58
+      },
+      {
+        id: 18,
+        type: "video",
+        stopCode: "STOP 19",
+        badge: "💃 Dance After Temple Visit",
+        title: "મંદિરેથી આવીને કરેલો આપણો કપલ ડાન્સ",
+        date: "મસ્ત ગીતો અને કાયમી યાદ",
+        // Replace with your local recorded greeting: e.g. "videos/birthday_msg.mp4"
+        img: "https://drive.google.com/thumbnail?id=1BkW14ERCuE4-s_0D5Z_PYz14Gwb4v0AE&sz=w1000",
+        gujaratiQuote: "મંદિરના પવિત્ર દર્શન પછી ઘરે આવીને મસ્ત મસ્ત ગીતો પર કરેલો આપણો એ કપલ ડાન્સ... એ ક્ષણ એટલી સુંદર હતી કે જિંદગીભર દિલમાં કાયમ માટે જીવંત રહેશે.",
+        englishQuote: "Coming back from the serene temple visit and having our sweet couple dance to lovely songs... that magical moment was so special that it will stay etched in my heart forever.",
+        story: "મંદિરેથી દર્શન કરીને આવ્યા પછી એકદમ ખુશનુમા માહોલમાં આપણે મનપસંદ ગીતો વગાડીને કપલ ડાન્સ કર્યો હતો. એ હાથમાં હાથ પરોવીને ઝૂમવું, તારું ખિલખિલાટ હસવું અને એ મીઠી ધમાલ... એ અદ્ભુત યાદ આજે પણ આ વિડીયો/ફોટામાં એટલી જ તાજી અને હંમેશ માટે યાદગાર રહેશે.",
+        pathPercent: 0.62
+      },
+      {
+        id: 19,
+        type: "video_call",
+        //type: "polaroid",
+        stopCode: "STOP 20",
+        badge: "💼 Interview Prep Call",
+        title: "તારી ઇન્ટરવ્યુની તૈયારી અને મારી સામે વાંચવાનો ડોળ",
+        date: "વિડીયો કોલ અને નોટ્સ",
+        img: "https://drive.google.com/thumbnail?id=1iDiL7OiolHgzOhyke1sVOFKA6J0vR1zc&sz=w1000",
+        gujaratiQuote: "મારી સામે સિન્સિયર દેખાવા માટે તું જે ગંભીરતાથી નોટ્સ વાંચતી હતી ને, તારી એ મીઠી એક્ટિંગ પાછળનું સ્મિત હું વિડીયો કોલ પર તરત પકડી પાડતો હતો!",
+        englishQuote: "The way you tried so hard to look utterly serious reading your notes just to impress me on the video call—I could always catch that playful smile hiding underneath!",
+        story: "હું તને વિડીયો કોલ પર ઇન્ટરવ્યુની તૈયારી કરાવતો હતો, અને તું મારી સામે સારું બતાવવા માટે ચોપડી-નોટ્સ પકડીને એકદમ ડાહી થઈને વાંચતી હતી! થોડી તૈયારી કરી અને બાકીની આપણી મસ્તી... આ ફોટો જોતાં જ તને એ વિડીયો કોલ વાળી મસ્ત સાંજ તરત યાદ આવી જશે.",
+        pathPercent: 0.65
+      },
+      {
+        id: 20,
+        type: "polaroid",
+        stopCode: "STOP 21",
+        badge: "🚌 Overnight Bus Journey",
+        title: "બારડોલીથી અમદાવાદ અને તારો સાથ",
+        date: "સવારનું બસ સ્ટોપ અને તારી ઊંઘ",
+        img: "https://drive.google.com/thumbnail?id=1lFRi6EOcF5pz_IopkklgtIL0fq6IFI5A&sz=w1000",
+        gujaratiQuote: "બસમાં શરૂ થયેલો આપણો એ રોમાન્સ, તારા હાથે બનાવેલી રસોઈનો સ્વાદ અને પ્રેમથી હાથ ધોવડાવવાની એ કાળજી... એ આખી સફર જાણે આપણા પ્રેમની સૌથી સુંદર વાર્તા બની ગઈ.",
+        englishQuote: "The romance that blossomed right from the bus seats, the sweetness of your handmade food, and the gentle care of washing hands together... that journey became the most beautiful chapter of our love.",
+        story: "બારડોલીથી અમદાવાદની બસમાં બેસતાં જ આપણો રોમાન્સ અને વહાલભરી વાતો શરૂ થઈ ગઈ હતી. સવારે અમદાવાદ પહોંચ્યા પછી બસ સ્ટોપ પર મારા ખભા પર માથું મૂકીને તારી એ મીઠી ઊંઘ, પ્રેમથી હાથ ધોવડાવવાની ક્ષણ અને ખાસ મારા માટે તારા પોતાના હાથે બનાવીને લાવેલી એ સ્વાદિષ્ટ રસોઈ... જમ્યા પછી એકબીજાની નજીક વિતાવેલી એ રોમેન્ટિક અને અનમોલ પળો આજે પણ આ યાદમાં એટલી જ તાજી છે.",
+        pathPercent: 0.68
+      },
+      {
+        id: 21,
+        type: "video_call",
+        stopCode: "STOP 22",
+        badge: "🤰 Fun Pregnancy Play",
+        title: "ટી-શર્ટમાં ચાદર અને તારું નખરાળું નાટક",
+        date: "વિડીયો કોલ પર અનોખો વેશ",
+        img: "https://drive.google.com/thumbnail?id=1ITQTvxra88jeSFJ4b795dDjBqjxsZj0g&sz=w1000",
+        gujaratiQuote: "ટી-શર્ટમાં ચાદર ઘુસાડીને તેં જે પ્રેગ્નન્ટ હોવાની એક્ટિંગ કરી હતી ને! આપણી એ પાગલપન વાળી મસ્તી અને પેટ પકડીને હસવું આજે પણ મારા મનને હળવું કરી દે છે.",
+        englishQuote: "The moment you stuffed a blanket inside your t-shirt and playfully pretended to be pregnant on our video call! That hilarious performance and our nonstop laughter is a memory I will cherish forever.",
+        story: "આપણે વિડીયો કોલ પર વાતો કરતા હતા અને તેં અચાનક ટી-શર્ટની અંદર આખી ચાદર ખોસી દીધી. 'જ્યારે હું પ્રેગ્નન્ટ હોઈશ ત્યારે કેવી લાગીશ?' એમ કહીને તેં જે નખરાં અને એક્ટિંગ ચાલુ કરી, એ જોઈને હું હસતાં હસતાં થાકી ગયો હતો! તારા એ નાટક અને આપણી હાસ્યની એ કૂણી ક્ષણ આ તસવીરમાં હંમેશ માટે સચવાઈ ગઈ.",
+        pathPercent: 0.72
+      },
+      {
+        id: 22,
+        type: "polaroid",
+        stopCode: "STOP 23",
+        badge: "🥻 Saree Play",
+        title: "તારો બદલો અને મારી સાડી વાળો લુક!",
+        date: "જ્યારે તેં મને સાડી પહેરાવી",
+        img: "https://drive.google.com/thumbnail?id=1zp3upnddYRHSCNqOHGIT_u5nXb3IXd8w&sz=w1000",
+        gujaratiQuote: "વિચારો આપણા તોફાનના! તેં મને સાડી પહેરાવી દીધી અને મારી એ ગૂંચવણ અને શરમ પર તારો એ ખિલખિલાટ હાસ્યનો રણકો... એ ક્ષણ આપણી સૌથી વહાલી અને અણધારી ભેટ હતી.",
+        englishQuote: "Your mischievous idea to drape your saree on me! My awkward confusion and your unstoppable, bubbly laughter as you captured it... that will always be our most playful and unexpected gift.",
+        story: "તું હંમેશા તોફાન શોધતી હોય છે! તેં જ્યારે જીદ કરીને મને સાડી પહેરાવવાનું શરૂ કર્યું, ત્યારે હું ક્યાં પકડવું અને કેમ ઊભા રહેવું એમાં જ ગૂંચવાઈ ગયો હતો. તારી એ ગલીપચી અને હસતી પળો વચ્ચે, મારી આવી હાલત જોઈને તેં મારો આ ખાસ ફોટો લીધો હતો, જે આપણી કૂણી અને ક્યારેય ન ભૂલાય તેવી યાદ બની ગયો.",
+        pathPercent: 0.75
+      },
+      {
+        id: 23,
+        type: "video",
+        stopCode: "STOP 24",
+        badge: "💃 Dance For You",
+        title: "મને ઇમ્પ્રેસ કરવા તારો સ્પેશિયલ ડાન્સ",
+        date: "એક વ્હાલો રેકોર્ડેડ વિડીયો",
+        img: "https://drive.google.com/thumbnail?id=1si8Xclk9D9Kwga3bPWFMhllDGyqsHURo&sz=w1000",
+        gujaratiQuote: "મને ઇમ્પ્રેસ કરવા માટે તેં ખાસ ડાન્સ કરીને મોકલેલો એ વિડીયો... તારી એ દરેક અદા અને એ મસ્ત સ્માઇલ સીધી મારા દિલમાં ઉતરી ગઈ હતી.",
+        englishQuote: "That special dance video you recorded just to impress me... every single step and that adorable smile melted my heart completely.",
+        story: "તેં ખાસ મને ઇમ્પ્રેસ કરવા માટે એકદમ મસ્ત ગીત પર ડાન્સ કર્યો અને એનો વિડીયો રેકોર્ડ કરીને મને મોકલ્યો હતો. તારી એ નખરાળી સ્ટાઇલ, તારો આત્મવિશ્વાસ અને છેલ્લે આપેલી એ ક્યૂટ સ્માઇલ જોઈને હું ખરેખર ફિદા થઈ ગયો હતો! એ વિડીયો આજે પણ મારી સૌથી ફેવરિટ યાદોમાંનો એક છે.",
+        pathPercent: 0.78
+      },
+      {
+        id: 24,
+        type: "video_call",
+        stopCode: "STOP 25",
+        badge: "✍️ English Poetry Mishap",
+        title: "તારી અંગ્રેજી શાયરી અને 'ફી પાછી લાવ' વાળી મજાક",
+        date: "શાયરી, સ્પેલિંગ મિસ્ટેક અને હાસ્ય",
+        img: "https://drive.google.com/thumbnail?id=1czPTkbW0zbUlVrslvSoyKdTrcQngPZTV&sz=w1000", 
+        guujaratiQuote: "તેં પ્રેમથી અંગ્રેજીમાં શાયરી તો લખી, પણ સ્પેલિંગ મિસ્ટેક જોઈને મેં કહી દીધું—'ઇંગ્લિશવાળા સર પાસેથી ફી પાછી માંગી લાવજે!' તારી એ માસૂમ ભૂલ પણ કેટલી વ્હાલી હતી.",
+        englishQuote: "You poured your heart out writing an English shayari, but catching your spelling mistake made me tease you—'Go ask your English teacher for a refund!' Even that innocent little slip was so terribly adorable.",
+        story: "તેં ખૂબ લાગણીથી મારા માટે અંગ્રેજીમાં એક સુંદર શાયરી લખીને મોકલી હતી. પણ એમાં સ્પેલિંગની એવી ભૂલ હતી કે મેં તને તરત જ ચીડવી દીધી કે 'તને અંગ્રેજી નથી આવડતું, તારા ઇંગ્લિશના સર પાસેથી ફી પાછી લઈ આવજે!' મારી એ મજાક પર તારી મીઠી નારાજગી અને આપણું પેટ પકડીને હસવું... આ પળ આપણી ક્યારેય ન ભુલાય તેવી મસ્તીભરી યાદ બની ગઈ.",
+        pathPercent: 0.82
+      },
+      {
+        id: 25,
+        type: "video_call",
+        stopCode: "STOP 26",
+        badge: "⏳ Worth The Wait",
+        title: "લાંબી રાહ પછી  તારો એ ચહેરો",
+        date: "બપોરની આતુરતા અને આપણી મુલાકાત",
+        img: "https://drive.google.com/thumbnail?id=1Kl6OrY6AslBUp0cvmjzDzzAhydr47cCB&sz=w1000",
+        gujaratiQuote: "બપોરના તડકામાં કરેલી એ લાંબી પ્રતીક્ષા એક પળમાં ગાયબ થઈ ગઈ, જ્યારે હોસ્ટેલનો ગેટ ખોલીને તું હાંફતી-હસતી મારી સામે આવીને ઊભી રહી.",
+        englishQuote: "The exhausting afternoon wait vanished in a heartbeat the moment you finally stepped out of the hostel gates, out of breath yet beaming with that gorgeous smile.",
+        story: "હોસ્ટેલમાંથી બહાર નીકળવાની મંજૂરી મેળવવામાં મોડું થઈ ગયું અને હું બપોરે તારી લાંબી રાહ જોઈ રહ્યો હતો. આખરે જ્યારે તું બહાર આવી, ત્યારે મોડા પડવાની એ માસૂમ માફી અને મને મળવાનો એ ઉમળકો જોઈને મારો બધો થાક ઊતરી ગયો! એ રાહ જોયા પછી સાથે લીધેલો આ ફોટો આપણી ધીરજ અને સ્નેહની સાબિતી છે.",
+        pathPercent: 0.85
+      },
+      {
+        id: 26,
+        type: "video",
+        stopCode: "STOP 27",
+        badge: "Selfie Queen",
+        title: "તારી એ નખરાળી 'એક આંખ ઊંચી' વાળી સેલ્ફી",
+        date: "સેલ્ફી પોઝ અને તારું પાગલપન",
+        img: "https://drive.google.com/thumbnail?id=1CDT4RKk5iVsQcmrD6TXYhkx1vl51b6Fc&sz=w1000",
+        guujaratiQuote: "જ્યારે પણ તારો એ નખરાળો સેલ્ફી પોઝ જોઉં છું ને, ત્યારે મને હસવું રોકાતું જ નથી! કેવી હોશિયારી મારતી-મારતી તું એ એક આંખ ઊંચી કરીને ફોટો લેતી હતી!",
+        englishQuote: "Whenever I look at your mischievous 'one eyebrow raised' selfie pose, I can't help but burst into laughter! The sheer attitude and confidence you had while snapping those is just unforgettable.",
+        story: "સેલ્ફી લેતી વખતે તારું એ અજીબ મોઢું બગાડવું અને એક આંખ ઊંચી કરીને પોઝ આપવો... એ તારો સૌથી મોટો ટ્રેન્ડ હતો! તું ખૂબ હોશિયારીથી અને સ્ટાઇલથી આ પોઝ કરતી, અને હું તારી એ ક્યૂટ પાગલપન વાળી હરકતો જોઈને હસી-હસીને થાકી જતો. આજે પણ તારા આવા ફોટોઝ જોઈને એ જૂની મસ્તી આપણી આંખો સામે આવી જાય છે.",
+        pathPercent: 0.88
+      },
+      {
+        id: 27,
+        type: "polaroid",
+        stopCode: "STOP 28",
+        badge: "🍽️ Fixed Dinner Spot",
+        title: "દરરોજ સાંજનું એક જ ફિક્સ રેસ્ટોરન્ટ",
+        date: "તારું મનપસંદ ખાવાનું અને આપણી સાંજ",
+        img: "https://drive.google.com/thumbnail?id=1W6DZZTedonfN-3EZTwBL1kp_-DNfu1uk&sz=w1000",
+        gujaratiQuote: "દુનિયાભરમાં ગમે તેટલા નવા કેફે કે રેસ્ટોરન્ટ હોય, પણ તારી પસંદગી તો હંમેશા એ એક જ જગ્યા પર અટકી જતી—કેમ કે ત્યાં તને ગમતો સ્વાદ હતો અને મને તારો સંગાથ!",
+        englishQuote: "No matter how many new cafes and restaurants existed around town, your heart was stubbornly set on that one favorite spot—because you loved their food, and I loved watching you enjoy it!",
+        story: "આપણે જ્યારે સાથે રહેતા હતા, ત્યારે દરરોજ સાંજે એક જ રેસ્ટોરન્ટમાં જવાનો આપણો વણલખ્યો નિયમ બની ગયો હતો! બીજે ગમે ત્યાં જવાનું કહીએ તોપણ છેલ્લે ગાડી ત્યાં જ ઊભી રહેતી, કારણ કે તને ત્યાંનું ખાવાનું જ સૌથી વધુ ભાવતું હતું. મેનૂ જોયા વગર જ ઓર્ડર આપી દેવો અને તારા ચહેરા પર એ ભાવતા ભોજનની ખુશી જોવી... એ સાંજની રૂટીન આપણી સૌથી મીઠી યાદોમાં વણાઈ ગઈ છે.",
+        pathPercent: 0.92
+      },
+      {
+        id: 28,
+        type: "video_call",
+        stopCode: "STOP 29",
+        badge: "👧 From Cute to Bossy",
+        title: "ત્યારે કેવી નિર્દોષ અને હવે આખી દાદાગીરી!",
+        date: "નાનપણની માસૂમિયત અને આજનું તોફાન",
+        img: "https://drive.google.com/thumbnail?id=1NAiIFRyyfNSH36lbPvDJiMWXSdHa-lwq&sz=w1000",
+        gujaratiQuote: "બાળપણમાં જે છોકરી સાવ ભોળી અને શાંત દેખાતી હતી, એ અત્યારે મારી ઉપર આખો દિવસ હુકમ ચલાવે છે! પણ તારી આ 'દાદાગીરી' જ મારા જીવનનો સાચો આનંદ છે.",
+        englishQuote: "The girl who looked incredibly sweet and innocent in her childhood photos is now the absolute boss of my life! But your playful, commanding attitude is my favorite part of us.",
+        story: "મેં તારી નાનપણની એ ક્યૂટ તસવીરો જોઈ છે—કેવી એકદમ ડાહી, માસૂમ અને નમણી લાગતી હતી! અને અત્યારે? હવે તો તું મારી સામે આખી ‘દાદાગીરી’ બતાવે છે, નાની-નાની વાતોમાં મને ધમકાવે છે અને પોતાનું જ ધાર્યું કરાવે છે. તારી એ માસૂમિયતથી લઈને આજના વ્હાલા તોફાની અને રૂઆબદાર અંદાજ સુધીની આ સફર ખરેખર અદ્ભુત છે! જન્મદિવસની ખૂબ ખૂબ શુભેચ્છાઓ મારી જાન!",
+        pathPercent: 0.95
+      },
+      {
+        id: 29,
+        type: "video",
+        stopCode: "STOP 30",
+        badge: "💇‍♀️ Bank Run Glam",
+        title: "બહેનને પૈસા મોકલવા અને તારી સ્પેશિયલ હેરસ્ટાઇલ",
+        date: "બેંક જવાની તૈયારી અને મસ્તી",
+        img: "https://drive.google.com/thumbnail?id=1QnxLAlyQNbzl8QYevz3gW7_Sm0EzmO4a&sz=w1000",
+        gujaratiQuote: "કામ માત્ર બહેનને પૈસા મોકલવા બેંક જવાનું હતું, પણ તારી એ હેરસ્ટાઇલ બનાવવાની મહેનત જાણે કોઈ મોટા ફંક્શનમાં જવાનું હોય એવી હતી!",
+        englishQuote: "The mission was just a quick run to the bank to transfer money for your sister, but the sheer dedication put into your hairstyle felt like preparing for a red carpet event!",
+        story: "તારી બહેનને પૈસા નાખવા માટે તારે બેંક જવાનું હતું, અને એના માટે તૈયાર થતાં તું અરીસા સામે ઊભા રહીને જે એકાગ્રતાથી હેરસ્ટાઇલ બનાવતી હતી ને... એ જોઈને મને ખૂબ મજા આવી ગઈ! સાદા કામ માટે પણ તારો આટલો બધો વટ અને સ્ટાઇલથી તૈયાર થવાનો અંદાજ આ તસવીરમાં આજે પણ એટલો જ વ્હાલો લાગે છે.",
+        pathPercent: 0.98
+      },
+      {
+        id: 30,
+        type: "video",
+        stopCode: "STOP 31",
+        badge: "🎂 Happy Birthday Jaan",
+        title: "હેપી બર્થડે મારી ડોબી, ભેંસ અને જાડી!",
+        date: "તારો ખાસ જન્મદિવસ",
+        img: "https://drive.google.com/thumbnail?id=15n3rubVsB1dyKBp5F20T0PetN8voID2w&sz=w1000",
+        gujaratiQuote: "ગમે તેટલી ખીજવું કે 'ડોબી', 'ભેંસ' અને 'જાડી' કહું, પણ મારા આખા દિલની માલિક તો તું જ છે! જન્મદિવસ મુબારક મારી જાન.",
+        englishQuote: "No matter how much I tease you by calling you goofy names, you will always be the absolute queen of my heart! Happiest Birthday, my love.",
+        story: "આજે તારો ખાસ દિવસ છે અને તને આ બધાં વહાલાં નામોથી બોલાવીને સતાવવાનો મારો હક છે! તારા વિના આ બધી મસ્તી સાવ અધૂરી છે. તું હંમેશા આમ જ ખિલખિલાટ હસતી રહે, મને હેરાન કરતી રહે અને આપણો આ પ્રેમ કાયમ આવો જ મસ્તીભર્યો રહે. હેપીએસ્ટ બર્થડે મારી વહાલી!",
+        pathPercent: 1.20
+      }
+    ];
+
+    let currentStop = 0;
+    let candleState = [true, true, true];
+    let audioCtx = null;
+    let isLoFiPlaying = false;
+    let wasLoFiPlayingBeforeVideo = false;
+    let loFiInterval = null;
+
+    // LocalStorage Synchronization
+    function loadSavedStops() {
+      const saved = localStorage.getItem('ROAD_TRIP_CUSTOM_DATA');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length === ROAD_TRIP_STOPS.length) {
+            for (let i = 0; i < ROAD_TRIP_STOPS.length; i++) {
+              Object.assign(ROAD_TRIP_STOPS[i], parsed[i]);
+            }
+          }
+        } catch (e) {}
+      }
+    }
+
+    /* Ambient Lo-Fi Synthesizer via Web Audio API */
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playTone(freq, duration = 0.5, type = 'sine', vol = 0.035) {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function toggleLoFiSoundtrack() {
+      initAudio();
+      const label = document.getElementById('audio-btn-label');
+      const icon = document.getElementById('audio-btn-icon');
+
+      if (!isLoFiPlaying) {
+        isLoFiPlaying = true;
+        label.textContent = "સંગીત: ચાલુ છે 🎶";
+        icon.classList.add("text-rose-400", "animate-spin");
+
+        const notes = [349.23, 440.00, 523.25, 659.25, 261.63, 329.63, 392.00, 523.25];
+        let idx = 0;
+        loFiInterval = setInterval(() => {
+          playTone(notes[idx % notes.length], 0.9, 'triangle', 0.025);
+          idx++;
+        }, 750);
+      } else {
+        isLoFiPlaying = false;
+        clearInterval(loFiInterval);
+        label.textContent = "સંગીત શરુ કરો";
+        icon.classList.remove("text-rose-400", "animate-spin");
+      }
+    }
+
+    /* Video Player Management & Audio Conflict Prevention */
+    function pauseMainVideo() {
+      const vid = document.getElementById('main-video-element');
+      if (vid && !vid.paused) {
+        vid.pause();
+      }
+      const driveEmbed = document.getElementById('drive-video-embed');
+      if (driveEmbed) driveEmbed.src = '';
+    }
+
+    function getDriveVideoPreviewUrl(videoUrl) {
+      try {
+        const url = new URL(videoUrl);
+        if (url.hostname !== 'drive.google.com' && url.hostname !== 'www.drive.google.com') return null;
+        const fileId = url.pathname.match(/\/file\/d\/([^/]+)/)?.[1] || url.searchParams.get('id');
+        return fileId ? `https://drive.google.com/file/d/${encodeURIComponent(fileId)}/preview` : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function toggleVideoPlayback() {
+      const vid = document.getElementById('main-video-element');
+      const icon = document.getElementById('video-play-btn-icon');
+      if (!vid) return;
+
+      if (vid.paused) {
+        // Pause ambient lo-fi music when video begins playing so audios don't clash
+        if (isLoFiPlaying) {
+          wasLoFiPlayingBeforeVideo = true;
+          toggleLoFiSoundtrack();
+        }
+        vid.play().then(() => {
+          icon.setAttribute('data-lucide', 'pause');
+          lucide.createIcons();
+        }).catch(() => {});
+      } else {
+        vid.pause();
+        icon.setAttribute('data-lucide', 'play');
+        lucide.createIcons();
+      }
+    }
+
+    function toggleVideoMute() {
+      const vid = document.getElementById('main-video-element');
+      const icon = document.getElementById('video-mute-icon');
+      if (!vid) return;
+
+      vid.muted = !vid.muted;
+      icon.setAttribute('data-lucide', vid.muted ? 'volume-x' : 'volume-2');
+      lucide.createIcons();
+    }
+
+    /* SVG Coordinates Calculation & Car Tracking */
+    function positionCarAtStop(index) {
+      const roadPath = document.getElementById('svg-lane-line');
+      const car = document.getElementById('couple-car');
+      if (!roadPath || !car) return;
+
+      const totalLen = roadPath.getTotalLength();
+      const pct = ROAD_TRIP_STOPS[index].pathPercent;
+      const targetLen = totalLen * Math.min(1, Math.max(0, pct));
+
+      const pt = roadPath.getPointAtLength(targetLen);
+      const delta = 5;
+      const pPrev = roadPath.getPointAtLength(Math.max(0, targetLen - delta));
+      const pNext = roadPath.getPointAtLength(Math.min(totalLen, targetLen + delta));
+      const angle = Math.atan2(pNext.y - pPrev.y, pNext.x - pPrev.x) * (180 / Math.PI);
+
+      car.style.left = `${(pt.x / 1000) * 100}%`;
+      car.style.top = `${(pt.y / 600) * 100}%`;
+      car.style.transform = `rotate(${angle}deg)`;
+    }
+
+    function renderRoadMarkers() {
+      const container = document.getElementById('road-markers-container');
+      const roadPath = document.getElementById('svg-lane-line');
+      if (!container || !roadPath) return;
+
+      container.innerHTML = '';
+      const totalLen = roadPath.getTotalLength();
+
+      ROAD_TRIP_STOPS.forEach((item, idx) => {
+        const pt = roadPath.getPointAtLength(totalLen * item.pathPercent);
+        const xPct = (pt.x / 1000) * 100;
+        const yPct = (pt.y / 600) * 100;
+
+        const isCurrent = idx === currentStop;
+        const isFinal = idx === ROAD_TRIP_STOPS.length - 1;
+
+        const pin = document.createElement('div');
+        pin.className = `absolute pointer-events-auto transform -translate-x-1/2 -translate-y-10 cursor-pointer transition-all duration-300 flex flex-col items-center ${
+          isCurrent ? 'scale-125 z-30' : 'hover:scale-110 z-10'
+        }`;
+        pin.style.left = `${xPct}%`;
+        pin.style.top = `${yPct}%`;
+        pin.onclick = () => openMemoryStop(idx);
+
+        let iconSymbol = '🎁';
+        if (isFinal) {
+          iconSymbol = '🎂';
+        } else if (item.type === 'video') {
+          iconSymbol = '🎥';
+        } else if (item.type === 'video_call') {
+          iconSymbol = '📱';
+        }
+        
+        pin.innerHTML = `
+          <div class="road-pin-anim flex flex-col items-center">
+            <div class="px-2 py-1 rounded-lg border-2 shadow-xl flex items-center gap-1 ${
+              isFinal 
+                ? 'bg-gradient-to-r from-amber-400 to-rose-500 border-white text-white font-bold'
+                : isCurrent 
+                  ? 'bg-rose-600 border-white text-white ring-4 ring-rose-500/40' 
+                  : 'bg-slate-900/90 border-amber-400/80 text-amber-300'
+            }">
+              <span class="text-xs">${iconSymbol}</span>
+              <span class="text-[9px] font-mono font-bold">${item.stopCode.replace('STOP ', '')}</span>
+            </div>
+            <div class="w-1 h-2.5 bg-slate-300"></div>
+          </div>
+        `;
+        container.appendChild(pin);
+      });
+    }
+
+    function openMemoryStop(idx) {
+      // Pause any currently playing video before switching
+      pauseMainVideo();
+
+      currentStop = idx;
+      const data = ROAD_TRIP_STOPS[idx];
+
+      positionCarAtStop(idx);
+      renderRoadMarkers();
+      renderDrawerList();
+
+      // Update Top HUD
+      document.getElementById('hud-stop-num').textContent = idx < 9 ? `0${idx + 1}` : `${idx + 1}`;
+      let hudType = '📷 POLAROID MEMORY';
+      if (data.type === 'video') hudType = '🎥 PLAYABLE VIDEO CLIP';
+      if (data.type === 'video_call') hudType = '📱 SCREENSHOT MEMORY';
+      document.getElementById('hud-stop-type').textContent = hudType;
+      document.getElementById('hud-stop-title').textContent = data.title;
+      const pct = ((idx + 1) / ROAD_TRIP_STOPS.length) * 100;
+      document.getElementById('hud-progress-bar').style.width = `${pct}%`;
+
+      // Triple Media Engine Containers
+      const videoPlayerBox = document.getElementById('container-video-player');
+      const videoCallBox = document.getElementById('container-video-call');
+      const polaroidBox = document.getElementById('container-polaroid');
+
+      videoPlayerBox.classList.add('hidden');
+      videoCallBox.classList.add('hidden');
+      polaroidBox.classList.add('hidden');
+
+      if (data.type === 'video') {
+        videoPlayerBox.classList.remove('hidden');
+        const vid = document.getElementById('main-video-element');
+        const driveEmbed = document.getElementById('drive-video-embed');
+        const customControls = document.getElementById('video-custom-controls');
+        const drivePreviewUrl = getDriveVideoPreviewUrl(data.img);
+
+        if (drivePreviewUrl) {
+          vid.pause();
+          vid.removeAttribute('src');
+          vid.load();
+          vid.classList.add('hidden');
+          driveEmbed.classList.remove('hidden');
+          driveEmbed.src = drivePreviewUrl;
+          customControls.classList.add('hidden');
+        } else {
+          driveEmbed.src = '';
+          driveEmbed.classList.add('hidden');
+          vid.classList.remove('hidden');
+          customControls.classList.remove('hidden');
+          vid.src = data.img;
+          vid.load();
+        }
+        
+        // Auto-pause lo-fi music if it is active so user can hear the video clip
+        if (!drivePreviewUrl && isLoFiPlaying) {
+          wasLoFiPlayingBeforeVideo = true;
+          toggleLoFiSoundtrack();
+        }
+        
+        // Try autoplaying video safely
+        if (!drivePreviewUrl) vid.play().then(() => {
+          document.getElementById('video-play-btn-icon').setAttribute('data-lucide', 'pause');
+          lucide.createIcons();
+        }).catch(() => {
+          document.getElementById('video-play-btn-icon').setAttribute('data-lucide', 'play');
+          lucide.createIcons();
+        });
+
+      } else if (data.type === 'video_call') {
+        const vid = document.getElementById('main-video-element');
+        vid.removeAttribute('src');
+        vid.load();
+        videoCallBox.classList.remove('hidden');
+        document.getElementById('img-video-call').src = data.img;
+      } else {
+        const vid = document.getElementById('main-video-element');
+        vid.removeAttribute('src');
+        vid.load();
+        polaroidBox.classList.remove('hidden');
+        document.getElementById('img-polaroid').src = data.img;
+        document.getElementById('polaroid-caption-date').textContent = data.date;
+      }
+
+      // Populate Text & Quotes
+      document.getElementById('modal-stop-badge').textContent = data.stopCode;
+      document.getElementById('modal-category-badge').textContent = data.badge;
+      document.getElementById('modal-heading-title').textContent = data.title;
+      document.getElementById('modal-date-label').innerHTML = `<i data-lucide="calendar" class="w-3.5 h-3.5 inline"></i> ${data.date}`;
+      document.getElementById('modal-gujarati-text').textContent = `"${data.gujaratiQuote}"`;
+      document.getElementById('modal-english-text').textContent = `"${data.englishQuote}"`;
+      document.getElementById('modal-story-narrative').textContent = data.story;
+
+      // Show Modal
+      document.getElementById('memory-modal').classList.remove('hidden');
+      playTone(523.25, 0.25, 'sine', 0.05);
+
+      if (idx === ROAD_TRIP_STOPS.length - 1) {
+        document.getElementById('grand-finale-section').classList.remove('hidden');
+      }
+
+      lucide.createIcons();
+    }
+
+    function closeMemoryModal() {
+      pauseMainVideo();
+      // Resume background music if it was paused specifically for the video
+      if (wasLoFiPlayingBeforeVideo && !isLoFiPlaying) {
+        toggleLoFiSoundtrack();
+        wasLoFiPlayingBeforeVideo = false;
+      }
+      document.getElementById('memory-modal').classList.add('hidden');
+      if (currentStop === ROAD_TRIP_STOPS.length - 1) {
+        document.getElementById('grand-finale-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function goToNextStop() {
+      pauseMainVideo();
+      closeMemoryModal();
+      if (currentStop < ROAD_TRIP_STOPS.length - 1) {
+        openMemoryStop(currentStop + 1);
+      } else {
+        document.getElementById('grand-finale-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function goToPrevStop() {
+      pauseMainVideo();
+      closeMemoryModal();
+      if (currentStop > 0) {
+        openMemoryStop(currentStop - 1);
+      }
+    }
+
+    function startTheRoadTrip() {
+      initAudio();
+      if (!isLoFiPlaying) toggleLoFiSoundtrack();
+      document.getElementById('highway-main').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => openMemoryStop(0), 600);
+    }
+
+    /* Candle Flames & Fireworks */
+    function toggleCandleFlame(idx) {
+      candleState[idx] = !candleState[idx];
+      const flame = document.getElementById(`candle-flame-${idx}`);
+      if (candleState[idx]) {
+        flame.classList.remove('opacity-0', 'scale-0');
+        flame.classList.add('flame-glowing');
+      } else {
+        flame.classList.remove('flame-glowing');
+        flame.classList.add('opacity-0', 'scale-0');
+        playTone(330, 0.15, 'sine', 0.04);
+      }
+
+      if (candleState.every(s => s === false)) {
+        triggerCelebrationConfetti();
+      }
+    }
+
+    function extinguishAllFlames() {
+      candleState = [false, false, false];
+      for (let i = 0; i < 3; i++) {
+        const flame = document.getElementById(`candle-flame-${i}`);
+        flame.classList.remove('flame-glowing');
+        flame.classList.add('opacity-0', 'scale-0');
+      }
+      playTone(523.25, 0.3, 'sine', 0.05);
+      setTimeout(() => playTone(659.25, 0.3, 'sine', 0.05), 150);
+      setTimeout(() => playTone(783.99, 0.6, 'sine', 0.07), 300);
+      triggerCelebrationConfetti();
+    }
+
+    function triggerCelebrationConfetti() {
+      if (typeof confetti === 'function') {
+        const end = Date.now() + 3000;
+        const colors = ['#fb7185', '#fda4af', '#fbbf24', '#ffffff', '#a855f7'];
+
+        (function frame() {
+          confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          });
+          confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }());
+      }
+    }
+
+    function sendLoveReaction(e) {
+      for (let i = 0; i < 6; i++) {
+        const h = document.createElement('div');
+        h.textContent = '❤️';
+        h.className = 'fixed pointer-events-none text-rose-500 text-xl font-bold transition-all';
+        h.style.left = `${e.clientX + (Math.random() * 40 - 20)}px`;
+        h.style.top = `${e.clientY + (Math.random() * 20 - 10)}px`;
+        h.style.transform = `translateY(0) scale(1)`;
+        document.body.appendChild(h);
+
+        setTimeout(() => {
+          h.style.transform = `translateY(-80px) scale(1.4)`;
+          h.style.opacity = '0';
+        }, 50);
+        setTimeout(() => h.remove(), 1100);
+      }
+      playTone(659.25, 0.3, 'sine', 0.04);
+    }
+
+    /* Quick Jump Drawer (Mini-Map) */
+    function toggleStopsDrawer() {
+      const drawer = document.getElementById('stops-drawer');
+      drawer.classList.toggle('translate-x-full');
+    }
+
+    function renderDrawerList() {
+      const list = document.getElementById('drawer-items-list');
+      list.innerHTML = '';
+
+      ROAD_TRIP_STOPS.forEach((s, idx) => {
+        const item = document.createElement('div');
+        const isActive = idx === currentStop;
+        item.className = `p-3 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+          isActive 
+            ? 'bg-rose-600/30 border-rose-500 text-white font-bold' 
+            : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:border-slate-700'
+        }`;
+        item.onclick = () => {
+          toggleStopsDrawer();
+          openMemoryStop(idx);
+        };
+
+        let mediaIcon = '📷';
+        if (s.type === 'video') mediaIcon = '🎥';
+        if (s.type === 'video_call') mediaIcon = '📱';
+
+        item.innerHTML = `
+          <div class="flex items-center gap-2.5">
+            <span class="text-sm">${mediaIcon}</span>
+            <div>
+              <p class="text-xs font-mono text-amber-300">${s.stopCode}</p>
+              <p class="text-xs font-gujarati line-clamp-1">${s.title}</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono text-slate-400">${s.date.split('•')[0]}</span>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    /* In-Browser Photo & Video Editor Modal */
+    function openEditorModal() {
+      const sel = document.getElementById('editor-select-stop');
+      sel.innerHTML = '';
+      ROAD_TRIP_STOPS.forEach((s, i) => {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = `${s.stopCode} - ${s.title.substring(0, 24)}...`;
+        sel.appendChild(opt);
+      });
+      sel.value = currentStop;
+      loadStopIntoEditor();
+      document.getElementById('editor-modal').classList.remove('hidden');
+    }
+
+    function closeEditorModal() {
+      document.getElementById('editor-modal').classList.add('hidden');
+    }
+
+    function loadStopIntoEditor() {
+      const idx = document.getElementById('editor-select-stop').value;
+      const data = ROAD_TRIP_STOPS[idx];
+      document.getElementById('editor-input-type').value = data.type;
+      document.getElementById('editor-input-img').value = data.img;
+      document.getElementById('editor-input-title').value = data.title;
+      document.getElementById('editor-input-quote').value = data.gujaratiQuote;
+    }
+
+    function saveEditorStopChanges() {
+      const idx = document.getElementById('editor-select-stop').value;
+      ROAD_TRIP_STOPS[idx].type = document.getElementById('editor-input-type').value;
+      ROAD_TRIP_STOPS[idx].img = document.getElementById('editor-input-img').value;
+      ROAD_TRIP_STOPS[idx].title = document.getElementById('editor-input-title').value;
+      ROAD_TRIP_STOPS[idx].gujaratiQuote = document.getElementById('editor-input-quote').value;
+
+      localStorage.setItem('ROAD_TRIP_CUSTOM_DATA', JSON.stringify(ROAD_TRIP_STOPS));
+      closeEditorModal();
+      openMemoryStop(idx);
+    }
+
+    /* Stationery Love Letter Populate */
+    function populateLetter() {
+      const body = document.getElementById('finale-letter-body');
+      body.innerHTML = `
+        <p>મારી વહાલી ડોબી,</p>
+        <p>જન્મદિવસની લાખ લાખ શુભકામનાઓ મારી વાલી ડોબી, જાડી અને ભેંસ! ભલે ગમે તેટલી મગજમારી થાય, પણ સાચું કહું તો તારા વગર મારો એક દિવસ પણ નથી ચાલતો.</p>
+        <p>આપણી પહેલી મુલાકાતથી લઈને મોડી રાતના વિડીયો કોલ્સ, મસ્તી-મજાક અને આજના આ ખાસ સ્ટોપ સુધીની દરેક ક્ષણ મારા દિલમાં વસેલી છે. હવે તું એક વર્ષ મોટી થઈ ગઈ છે એટલે મારી એક જ વિશ છે કે તું થોડી મેચ્યોર બને! નાની-નાની વાત પર ડિબેટ લઈને ઉતરી પડવાને બદલે વાતની સચ્ચાઈ સમજવાની કોશિશ કરે અને મારી સાથે ફાલતુના ઝઘડા કરવાનું થોડું ઓછું કરે.</p>
+        <p>તું જે એક્ઝામ માટે આટલી મહેનત કરી રહી છે એમાં તું સારા માર્ક્સે પાસ થઈ જાય અને મસ્ત નોકરી મળે એવી દિલથી શુભેચ્છા. નવું વર્ષ તારા માટે ખૂબ બધી સફળતા લઈને આવે. Wishing you the happiest birthday my love! ❤️✨</p>      `;
+    }
+
+    function createStars() {
+      const sky = document.getElementById('stars-sky');
+      sky.innerHTML = '';
+      for (let i = 0; i < 70; i++) {
+        const star = document.createElement('div');
+        star.className = 'twinkling-star';
+        const sz = Math.random() * 2.2 + 1;
+        star.style.width = `${sz}px`;
+        star.style.height = `${sz}px`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 4}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        sky.appendChild(star);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadSavedStops();
+      createStars();
+      populateLetter();
+      renderRoadMarkers();
+      renderDrawerList();
+      positionCarAtStop(0);
+
+      window.addEventListener('resize', () => {
+        positionCarAtStop(currentStop);
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') goToNextStop();
+        if (e.key === 'ArrowLeft') goToPrevStop();
+        if (e.key === 'Escape') {
+          closeMemoryModal();
+          closeEditorModal();
+        }
+      });
+
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
